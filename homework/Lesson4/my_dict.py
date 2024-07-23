@@ -12,3 +12,7 @@ print(poped)
 
 my_dict['dict']['i am a tuple'] = 'test_add_new_value'
 print(my_dict['dict'])
+
+poped2 = my_dict['dict'].pop('test2')
+print(poped2)
+print(my_dict['dict'])
