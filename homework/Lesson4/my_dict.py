@@ -5,3 +5,7 @@ print(my_dict['tuple'][-1])
 
 my_dict['list'].append(46)
 print(my_dict)
+
+poped = my_dict['list'].pop(1)
+print(my_dict['list'])
+print(poped)
