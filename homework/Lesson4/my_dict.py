@@ -9,3 +9,6 @@ print(my_dict)
 poped = my_dict['list'].pop(1)
 print(my_dict['list'])
 print(poped)
+
+my_dict['dict']['i am a tuple'] = 'test_add_new_value'
+print(my_dict['dict'])
