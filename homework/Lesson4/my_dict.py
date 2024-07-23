@@ -19,3 +19,7 @@ print(my_dict['dict'])
 
 my_dict['set'].add(100)
 print(my_dict['set'])
+
+poped3 = my_dict['set'].remove(5)
+print(poped3)
+print(my_dict['set'])
