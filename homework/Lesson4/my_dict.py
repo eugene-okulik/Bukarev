@@ -16,3 +16,6 @@ print(my_dict['dict'])
 poped2 = my_dict['dict'].pop('test2')
 print(poped2)
 print(my_dict['dict'])
+
+my_dict['set'].add(100)
+print(my_dict['set'])
