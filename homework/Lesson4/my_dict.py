@@ -16,7 +16,7 @@ print(my_dict['list'])
 print(poped)
 print(symbol)
 
-my_dict['dict']['i am a tuple'] = ('test_add_new_value', )
+my_dict['dict']['test_add_new_value'] = ('i am a tuple', )
 print(my_dict['dict'])
 print(type(my_dict['dict']['i am a tuple']))
 
