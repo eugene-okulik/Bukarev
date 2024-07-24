@@ -16,8 +16,10 @@ print(my_dict['list'])
 print(poped)
 print(symbol)
 
-my_dict['dict']['i am a tuple'] = 'test_add_new_value'
+my_dict['dict']['i am a tuple'] = ('test_add_new_value', )
 print(my_dict['dict'])
+print(type(my_dict['dict']['i am a tuple']))
+
 
 poped2 = my_dict['dict'].pop('test2')
 print(poped2)
