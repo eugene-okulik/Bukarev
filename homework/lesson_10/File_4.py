@@ -29,8 +29,4 @@ def calc(first, second, operation):
         return first / second
     elif operation == '*':
         return print(first * second)
-
-
-
-
 calc(10, 10)
