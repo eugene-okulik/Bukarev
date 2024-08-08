@@ -30,5 +30,5 @@ def calc(first, second, operation):
     elif operation == '*':
         return print(first * second)
 
-    
+
 calc(10, 10)
