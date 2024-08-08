@@ -11,11 +11,8 @@ def repeat_me(count1):
     return actual
 
 
-@repeat_me(count1=6)
+@repeat_me(count1=2)
 def example(text):
     print(text)
 
-
-example = repeat_me(count1=4)(example('peint me'))
-
-# example('print me'))
+example('print me')
