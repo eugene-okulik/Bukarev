@@ -3,19 +3,19 @@ def operacii(func):
     def wrapper(first, second):
         if first < 0:
             operation = '*'
-            print(func(first, second, operation))
+            func(first, second, operation)
         if second < 0:
             operation = '*'
-            print(func(first, second, operation))
+            func(first, second, operation)
         elif first == second:
             operation = '+'
-            print(func(first, second, operation))
+            func(first, second, operation)
         elif first > second:
             operation = '-'
-            print(func(first, second, operation))
+            func(first, second, operation)
         elif second > first:
             operation = '/'
-            print(func(first, second, operation))
+            func(first, second, operation)
     return wrapper
 
 
@@ -28,7 +28,7 @@ def calc(first, second, operation):
     elif operation == '/':
         return first / second
     elif operation == '*':
-        return print(first * second)
-
+        return first * second
+    
 
 calc(10, 10)
