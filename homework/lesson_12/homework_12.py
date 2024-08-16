@@ -40,8 +40,10 @@ class Flowers:
             return self.evr_life / 2
 
     def __str__(self):
-        return (f'Цвет: {self.get_color()} , Длинна стебля: {self.len_stem()},  Цена за 1 шт: {self.price_m()},'
-                f' Свежие: {self.fresh()}, Средниее время жизни: {self.evr_l()}, Количество: {self.quantity}')
+        return (f'Название цветка: {self.name}, Цвет: {self.get_color()} ,'
+                f' Длинна стебля: {self.len_stem()},  Цена за 1 шт: {self.price_m()},'
+                f' Свежие: {self.fresh()}, Средниее время жизни: {self.evr_l()},'
+                f' Количество: {self.quantity}')
 
     def name_r(self):
         if self.name:
@@ -62,7 +64,9 @@ class Hydrangea(Flowers):
 
 rouse1 = Rouse('70', 'Оранжевый', 50, True, 6, 1, 'Роза1')
 rouse2 = Rouse('100', 'Красный', 150, True, 10, 1, 'Роза2')
-hydrangea1 = Hydrangea(80, 'Белая', 300, False, 16, 1, 'Гортензия1')
+hydrangea1 = Hydrangea(80, 'Белая', 300, True, 8, 1, 'Гортензия1')
+hydrangea2 = Hydrangea(80, 'Белая', 300, True, 15, 1, 'Гортензия2')
+hydrangea3 = Hydrangea(80, 'Белая', 300, True, 15, 1, 'Гортензия3')
 
 
 class Bouquet:
@@ -83,20 +87,23 @@ class Bouquet:
             description += f'{flower}\n'
         description += f'Среднее время жизни букета: {self.aver_rip()} дней.\n'
         description += f'Стоимость букета составляет: {self.price_b()} \n'
-        description += f'Название цветка в букете: {self.find()}'
+        description += f'Название цветка в букете: \n{self.find()}'
         return description
 
     def price_b(self):
         return sum(flower.price * flower.quantity for flower in self.flowers)
 
     def find(self):
-        names = [flower.name for flower in self.flowers if (flower.evr_l() == 8) or (flower.evr_l() == 6)
-                 or (flower.evr_l() == 1)]
-        return ', '.join(names)
+        result = []
+        for flower in self.flowers:
+            if flower.evr_l() in [6, 8, 10, 15]:
+                result.append(flower.__str__())
+        return ' \n'.join(result)
 
 
 bouquet = Bouquet()
 bouquet.add_flowers(rouse2)
 bouquet.add_flowers(rouse1)
 bouquet.add_flowers(hydrangea1)
+bouquet.add_flowers(hydrangea2)
 print(bouquet)
