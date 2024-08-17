@@ -65,7 +65,7 @@ class Hydrangea(Flowers):
 rouse1 = Rouse(60, 'Оранжевый', 50, True, 6, 1, 'Роза1')
 rouse2 = Rouse(50, 'Красный', 150, True, 10, 1, 'Роза2')
 hydrangea1 = Hydrangea(2, 'Белая', 300, True, 8, 1, 'Гортензия1')
-hydrangea2 = Hydrangea(4, 'Белая', 300, True, 15, 1, 'Гортензия2')
+hydrangea2 = Hydrangea(4, 'Белая', 300, False, 15, 1, 'Гортензия2')
 hydrangea3 = Hydrangea(40, 'Белая', 300, True, 15, 1, 'Гортензия3')
 
 
@@ -87,25 +87,25 @@ class Bouquet:
             description += f'{flower}\n'
         description += f'Среднее время жизни букета: {self.aver_rip()} дней.\n'
         description += f'Стоимость букета составляет: {self.price_b()} \n'
-        description += f'Название цветка в букете: \n{self.find()}'
+        description += f'Название цветка в букете: \n{self.find}'
         return description
 
     def price_b(self):
         return sum(flower.price * flower.quantity for flower in self.flowers)
 
-    def find(self):
+    def find(self, list_1):
         result = []
         for flower in self.flowers:
-            if flower.evr_l() in [6, 8, 10, 15]:
-                result.append(flower.__str__())
-        return ' \n'.join(result)
+            if flower.evr_l() in list_1:
+                result.append(flower)
+        return result
 
     def bubble_sort(self, key_func):
         n = len(self.flowers)
         for i in range(n):
-            for j in range(0, n - i - 1):
-                if key_func(self.flowers[j]) > key_func(self.flowers[j + 1]):
-                    self.flowers[j], self.flowers[j + 1] = self.flowers[j + 1], self.flowers[j]
+            for flower in range(0, n - i - 1):
+                if key_func(self.flowers[flower]) > key_func(self.flowers[flower + 1]):
+                    self.flowers[flower], self.flowers[flower + 1] = self.flowers[flower + 1], self.flowers[flower]
 
     def sort_by_freshness(self):
         def freshness_key(flower):
@@ -129,13 +129,16 @@ class Bouquet:
 
 
 bouquet = Bouquet()
+
+
 bouquet.add_flowers(rouse2)
 bouquet.add_flowers(rouse1)
 bouquet.add_flowers(hydrangea1)
 bouquet.add_flowers(hydrangea2)
 bouquet.add_flowers(hydrangea3)
+
+
 print(bouquet)
-
-
-bouquet.sort_by_stem_length()
-print('Букет после сортировки\n', bouquet)
+found_flowers = bouquet.find([6, 8, 10, 15])
+for flower in found_flowers:
+    print(flower)
