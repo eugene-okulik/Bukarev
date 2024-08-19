@@ -9,10 +9,7 @@ print(file_eu_okulik)
 print(file_eu_okulik)
 
 time_now = datetime.datetime.now()
-# print(time_now)
 time_1 = str(time_now).split(' ')
-# print(time_1)
-# print(type(time_1))
 
 
 def read_file():
@@ -49,14 +46,3 @@ for data_line in read_file():
             day = date_old.days
             z.append('Результат: ' + str(day) + ' дней назад')
             new_file.write(' '.join(z) + "\n")
-
-            # print(str(z))
-
-
-
-
-        # print(z_with_newline)
-        # print(type(z_with_newline))
-        #
-        # new_file.write(z_with_newline)
-        # # print(type(z))
