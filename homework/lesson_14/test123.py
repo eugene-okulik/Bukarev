@@ -144,7 +144,7 @@ db_conf = {
     'user': 'st-onl',
     'passwd': 'AVNS_tegPDkI5BlB2lW5eASC',
     'database': 'st-onl'
-    }
+}
 
 '''Сздаем студента'''
 # create_item('students', db_conf, name='Виктор', second_name='Букарев')
@@ -186,7 +186,7 @@ db_conf = {
 # create_join_query('students', 'books', db_conf, 'RIGHT JOIN', 'id', 'title',
 #                   **{'books.taken_by_student_id': '1945'})
 
-'''Для вашего студента выведите всё, что о нем есть в базе: группа, книги, 
+'''Для вашего студента выведите всё, что о нем есть в базе: группа, книги,
 оценки с названиями занятий и предметов (всё одним запросом с использованием Join)'''
 
 query = """
