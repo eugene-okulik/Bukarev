@@ -139,12 +139,12 @@ def mult_join(query, params, db):
 
 
 db_conf = {
-        'host': 'db-mysql-fra1-09136-do-user-7651996-0.b.db.ondigitalocean.com',
-        'port': '25060',
-        'user': 'st-onl',
-        'passwd': 'AVNS_tegPDkI5BlB2lW5eASC',
-        'database': 'st-onl'
-        }
+    'host': 'db-mysql-fra1-09136-do-user-7651996-0.b.db.ondigitalocean.com',
+    'port': '25060',
+    'user': 'st-onl',
+    'passwd': 'AVNS_tegPDkI5BlB2lW5eASC',
+    'database': 'st-onl'
+    }
 
 '''Сздаем студента'''
 # create_item('students', db_conf, name='Виктор', second_name='Букарев')
@@ -190,16 +190,16 @@ db_conf = {
 оценки с названиями занятий и предметов (всё одним запросом с использованием Join)'''
 
 query = """
-SELECT * 
-FROM students 
-JOIN `groups` ON students.group_id = `groups`.id 
-JOIN books ON students.id = books.taken_by_student_id 
-JOIN marks ON students.id = marks.student_id 
-JOIN lessons ON students.id = marks.student_id 
-JOIN subjets ON lessons.subject_id = subjets.id 
-WHERE `groups`.id = %s 
-  AND books.taken_by_student_id = %s 
-  AND marks.student_id = %s 
+SELECT *
+FROM students
+JOIN `groups` ON students.group_id = `groups`.id
+JOIN books ON students.id = books.taken_by_student_id
+JOIN marks ON students.id = marks.student_id
+JOIN lessons ON students.id = marks.student_id
+JOIN subjets ON lessons.subject_id = subjets.id
+WHERE `groups`.id = %s
+  AND books.taken_by_student_id = %s
+  AND marks.student_id = %s
   AND subjets.id = %s
 """
 params = (1813, 1945, 1945, 2545)
