@@ -120,6 +120,6 @@ cursor.execute(query, param_all)
 result = cursor.fetchall()
 for item in result:
     print(item)
-    
+
 db.commit()
 db.close()
