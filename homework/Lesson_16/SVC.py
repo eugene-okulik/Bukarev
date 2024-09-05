@@ -44,13 +44,13 @@ for row in csv_data:
 
 def sravnenie(data_row, csv_row):
     return (
-        data_row['name'] == csv_row[0] and
-        data_row['second_name'] == csv_row[1] and
-        data_row['group_title'] == csv_row[2] and
-        data_row['book_title'] == csv_row[3] and
-        data_row['subject_title'] == csv_row[4] and
-        data_row['lesson_title'] == csv_row[5] and
-        str(data_row['mark_value']) == csv_row[6]
+        data_row['name'] == csv_row[0]
+        and data_row['second_name'] == csv_row[1]
+        and data_row['group_title'] == csv_row[2]
+        and data_row['book_title'] == csv_row[3]
+        and data_row['subject_title'] == csv_row[4]
+        and data_row['lesson_title'] == csv_row[5]
+        and str(data_row['mark_value']) == csv_row[6]
     )
 
 
