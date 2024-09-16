@@ -6,13 +6,13 @@ import requests
 
 def post_object():
     body = {
-            "name": "Apple MacBook Pro 21",
-            "data": {
-                "year": 2024,
-                "price": 4000.95,
-                "CPU model": "Intel Core i9",
-                "Hard disk size": "10 TB"
-            }
+        "name": "Apple MacBook Pro 21",
+        "data": {
+            "year": 2024,
+            "price": 4000.95,
+            "CPU model": "Intel Core i9",
+            "Hard disk size": "10 TB"
+        }
     }
     headers = {"content-type": "application/json"}
     req = requests.post(
@@ -42,14 +42,14 @@ def get_id(post_id):
 def put_object_id():
     post_id = new_post_object()
     body = {
-            "name": "Apple MacBook Pro 21",
-            "data": {
-                "year": 2024,
-                "price": 4000.95,
-                "CPU model": "Intel Core i9",
-                "Hard disk size": "10 TB",
-                "color": "red"
-            }
+        "name": "Apple MacBook Pro 21",
+        "data": {
+            "year": 2024,
+            "price": 4000.95,
+            "CPU model": "Intel Core i9",
+            "Hard disk size": "10 TB",
+            "color": "red"
+        }
     }
     headers = {"content-type": "application/json"}
     req = requests.put(
@@ -87,13 +87,13 @@ def patch_object_id():
 
 def new_post_object():
     body = {
-            "name": "Apple MacBook Pro 21",
-            "data": {
-                "year": 2024,
-                "price": 4000.95,
-                "CPU model": "Intel Core i9",
-                "Hard disk size": "10 TB"
-            }
+        "name": "Apple MacBook Pro 21",
+        "data": {
+            "year": 2024,
+            "price": 4000.95,
+            "CPU model": "Intel Core i9",
+            "Hard disk size": "10 TB"
+        }
     }
     headers = {"content-type": "application/json"}
     req = requests.post(
