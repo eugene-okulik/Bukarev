@@ -26,13 +26,10 @@ def test_delete_id(new_post_id):
 
 def test_create_post():
     body = {"name": "Zenit", "data": {"year": 2025, "price": 10000, "CPU model": "Zenit99",
-                                                     "Hard disk size": "100 TB"}}
+                                      "Hard disk size": "100 TB"}}
     headers = {"content-type": "application/json"}
-    req = requests.post(
-        'http://167.172.172.115:52353/object',
-        json=body,
-        headers=headers,
-    )
+    req = requests.post(f'http://167.172.172.115:52353/object', json=body, headers=headers).json()
+    print(req)
 
 
 @pytest.mark.smoke
