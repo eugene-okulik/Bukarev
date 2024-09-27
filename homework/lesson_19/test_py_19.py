@@ -16,17 +16,23 @@ def new_post_id():
     print(postid)
     yield postid
     req = requests.delete(f'http://167.172.172.115:52353/object/{postid}')
-    assert req.status_code == 200, 'Метод удалить объект не отработал'
     print('Удаление', req)
-    r = requests.get(f'https://api.restful-api.dev/objects/{postid}')
-    assert r.status_code == 404, 'Объект не удален'
-    print('dddd', r)
 
 
-# @pytest.fixture()
-# def get_obj_id():
-#     r = requests.get(f'http://167.172.172.115:52353/object/64')
-#     print('dddddddddddddd', r.status_code)
+def test_delete_id(new_post_id):
+    req = requests.delete(f'http://167.172.172.115:52353/object/{new_post_id}')
+    assert req.status_code == 200, 'Метод удалить объект не отработал'
+
+
+def test_create_post():
+    body = {"name": "Zenit", "data": {"year": 2025, "price": 10000, "CPU model": "Zenit99",
+                                                     "Hard disk size": "100 TB"}}
+    headers = {"content-type": "application/json"}
+    req = requests.post(
+        'http://167.172.172.115:52353/object',
+        json=body,
+        headers=headers,
+    )
 
 
 @pytest.mark.smoke
