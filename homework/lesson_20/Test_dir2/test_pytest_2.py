@@ -12,11 +12,13 @@ def test_delete_id_1(new_post_id):
     with allure.step('проверка на статус ответа 200'):
         assert req.status_code == 300, 'Метод удалить объект не отработал'
 
+
 @allure.feature('удаление №2')
 @allure.story("метод удаления 2")
 def test_delete_id_2(new_post_id):
     req = requests.delete(f'http://167.172.172.115:52353/object/{new_post_id}')
     assert req.status_code == 200, 'Метод удалить объект не отработал'
+
 
 @allure.feature("создание обеъкта")
 @allure.story("Создание методом Post")
@@ -26,6 +28,7 @@ def test_create_post():
     headers = {"content-type": "application/json"}
     req = requests.post('http://167.172.172.115:52353/object', json=body, headers=headers).json()
     print(req)
+
 
 @allure.feature('Изменения в объекте')
 @allure.story("Метод PATCH")
@@ -39,6 +42,7 @@ def test_patch_id(new_post_id):
     headers = {"content-type": "application/json"}
     r = requests.patch(f'http://167.172.172.115:52353/object/{new_post_id}', json=body, headers=headers).json()
     print(r)
+
 
 @allure.feature("Изменение во всем объекте")
 @allure.story("Метод PATCH")
